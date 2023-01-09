@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Playing with inputs">
+        <lightning-button label="inputaclic" slot="actions" onclick={handleClick}></lightning-button>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+
+            <p class="slds-p-horizontal_small">
+                Dans un LWC tu peux interagir avec le composant par différents moyens, un champ texte, un bouton, un
+                slider, etc...
+                Chaque changement est récupérer dans le js pour être interprété et traité dans une fonction pour savoir
+                quoi en faire
+                Essaye les composants ci-dessous:
+            </p>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium slds-p-horizontal_small">
+                Input
+            </h2>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Tape un texte ici:" onchange={handleInputChange}></lightning-input>
+            </div>
+
+            <div class="slds-m-vertical_medium slds-p-horizontal_small">
+                <p>Tu viens d'écrire: <span class="slds-text-color_success">{textValue}</span></p>
+            </div>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium slds-p-horizontal_small">
+                Slider
+            </h2>
+            <p class="slds-p-horizontal_small">
+                <lightning-slider label="Volume" value={sliderValue} class="slds-p-horizontal_small" onchange={handleSliderChange}></lightning-slider>
+
+                Tu peux t'amuser à remplir un petit cercle à {sliderValue}% : <lightning-progress-ring value={sliderValue}>
+                </lightning-progress-ring>
+            </p>
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium slds-p-horizontal_small">
+                Button
+            </h2>
+            <p class="slds-p-horizontal_small">
+                Tu as cliqué {nbrOfClicks} fois sur le bouton au dessus.
+            </p>
+        </div>
+        <p slot="footer">Made with ❤️ by ACE</p>
+    </lightning-card>
+</template>
