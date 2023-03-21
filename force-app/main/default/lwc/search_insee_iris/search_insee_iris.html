@@ -1,0 +1,22 @@
+<template>
+  <lightning-card title="Compléter ou vérifier l'adresse">
+    <div class="slds-m-around_medium">
+      <p>Ce composant permet de compléter les champs Insee et/ou Iris de l'adresse.</p>
+      <p>Il est nécessaire d'avoir une rue, une ville et un code postal renseignés.</p>
+    </div>
+    <div class="slds-m-around_medium">
+      <lightning-button
+        label="Compléter ou vérifier"
+        variant="brand"
+        onclick={handleClick}
+        disabled={isLoading}>
+      </lightning-button>
+    </div>
+    <div class="slds-m-around_medium">
+      <p if:true={address_new.address}><b>Adresse complète retrouvée :</b> {address_new.address}</p>
+      <p if:true={address_new.code_insee}><b>Code Insee :</b> {address_new.code_insee}</p>
+      <p if:true={address_new.code_iris}><b>Code Iris :</b> {address_new.code_iris}</p>
+      <p if:true={error}><b>Erreur :</b> {error}</p>
+    </div>
+  </lightning-card>
+</template>
